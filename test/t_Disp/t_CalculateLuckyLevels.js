@@ -1,20 +1,23 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
-import CalculateLuckyLevels, { CalculateSevenDelta, CountSevens } from '../../src/Disp/HelperFunctions/CalculateLuckyLevels';
+import CalculateLuckyLevels, {
+  CalculateSevenDelta,
+  CountSevens,
+} from '../../src/Disp/HelperFunctions/CalculateLuckyLevels';
 
 describe('CountSevens', () => {
   const examples = [
     { input: 1234567890, output: 1 },
     { input: 7777777777, output: 10 },
     { input: 1111111111, output: 0 },
-    { input: 7897897897, output: 4 }
+    { input: 7897897897, output: 4 },
   ];
 
   examples.forEach((example) => {
     it(`Counts sevens in ${example.input}`, () => {
       expect(CountSevens(example.input)).to.equal(example.output);
-    })
+    });
   });
 });
 
@@ -48,8 +51,18 @@ describe('CalculateLuckyLevels', () => {
     { input: 77777, luckyDigit: 77777, luckyNumber: 77777, luckyPayout: 77777 },
     { input: 799999, luckyDigit: 799999, luckyNumber: 800077, luckyPayout: 807777 },
     { input: 999999, luckyDigit: 1000007, luckyNumber: 1000077, luckyPayout: 1007777 },
-    { input: 123456789123456789, luckyDigit: 123456789123456789, luckyNumber: 123456789123456789, luckyPayout: 123456789123777000 },
-    { input: 8888888888888888888, luckyDigit: 8888888888888970000, luckyNumber: 8888888888889770000, luckyPayout: 8888888888977770000 },
+    {
+      input: 123456789123456789,
+      luckyDigit: 123456789123456789,
+      luckyNumber: 123456789123456789,
+      luckyPayout: 123456789123777000,
+    },
+    {
+      input: 8888888888888888888,
+      luckyDigit: 8888888888888970000,
+      luckyNumber: 8888888888889770000,
+      luckyPayout: 8888888888977770000,
+    },
   ];
 
   examples.forEach((example) => {
@@ -57,7 +70,7 @@ describe('CalculateLuckyLevels', () => {
       expect(CalculateLuckyLevels(example.input)).to.deep.equal({
         luckyDigit: example.luckyDigit,
         luckyNumber: example.luckyNumber,
-        luckyPayout: example.luckyPayout
+        luckyPayout: example.luckyPayout,
       });
     });
   });

@@ -49,7 +49,7 @@ export default function CalculateLuckyLevels(currentLevel) {
   // Consider only top 15 digits if it is big number
   let localLevel;
   if (numberOfDigits >= 16) {
-    localLevel = Math.ceil(currentLevel / (10 ** (numberOfDigits - 15)));
+    localLevel = Math.ceil(currentLevel / 10 ** (numberOfDigits - 15));
   } else {
     localLevel = currentLevel;
   }
@@ -65,7 +65,7 @@ export default function CalculateLuckyLevels(currentLevel) {
 
     result.luckyDigit = localLevel;
     if (numberOfDigits >= 16) {
-      result.luckyDigit *= 10 ** Number((numberOfDigits - 15));
+      result.luckyDigit *= 10 ** Number(numberOfDigits - 15);
     }
   }
 
@@ -80,7 +80,7 @@ export default function CalculateLuckyLevels(currentLevel) {
 
     result.luckyNumber = localLevel;
     if (numberOfDigits >= 16) {
-      result.luckyNumber *= 10 ** Number((numberOfDigits - 15));
+      result.luckyNumber *= 10 ** Number(numberOfDigits - 15);
     }
   }
 
@@ -97,7 +97,7 @@ export default function CalculateLuckyLevels(currentLevel) {
 
   result.luckyPayout = localLevel;
   if (numberOfDigits >= 16) {
-    result.luckyPayout *= 10 ** Number((numberOfDigits - 15));
+    result.luckyPayout *= 10 ** Number(numberOfDigits - 15);
   }
 
   return result;
