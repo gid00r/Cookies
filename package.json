@@ -56,7 +56,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "2.8.7",
     "webpack": "^5.76.1",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^5.1.4"
   },
   "ccrepo": {
     "icon": [
